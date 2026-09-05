@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Sistema de gestão de estoque para cadastro e visualização de produtos."
+    >
+
+    <title>Stock Manager - Gestão de Estoque</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <div class="container cabecalho-conteudo">
+            <div class="logo">
+                <span class="logo-icone">SM</span>
+
+                <div>
+                    <h1>Stock Manager</h1>
+                    <p>Sistema de Gestão de Estoque</p>
+                </div>
+            </div>
+
+            <nav aria-label="Navegação principal">
+                <ul class="menu">
+                    <li>
+                        <a href="#cadastro">Cadastrar</a>
+                    </li>
+
+                    <li>
+                        <a href="#produtos">Produtos</a>
+                    </li>
+
+                    <li>
+                        <a href="#informacoes">Informações</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="hero" aria-labelledby="titulo-principal">
+            <div class="container">
+                <p class="etiqueta">GESTÃO DE ESTOQUE</p>
+
+                <h2 id="titulo-principal">
+                    Controle seus produtos de forma simples
+                </h2>
+
+                <p>
+                    Cadastre produtos, acompanhe quantidades disponíveis
+                    e mantenha as informações do estoque organizadas.
+                </p>
+            </div>
+        </section>
+
+
+        <section id="cadastro" class="secao" aria-labelledby="titulo-cadastro">
+            <div class="container">
+
+                <div class="titulo-secao">
+                    <div>
+                        <p class="etiqueta">NOVO REGISTRO</p>
+
+                        <h2 id="titulo-cadastro">
+                            Cadastro de produto
+                        </h2>
+
+                        <p>
+                            Preencha os campos abaixo para adicionar um
+                            novo produto ao estoque.
+                        </p>
+                    </div>
+                </div>
+
+
+                <form class="formulario" id="formulario-produto" novalidate>
+
+    <fieldset>
+        <legend>Informações do produto</legend>
+
+        <div class="grid-formulario">
+
+            <div class="campo">
+                <label for="nome">
+                    Nome do produto
+                </label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Ex.: Teclado mecânico"
+                    required
+                >
+
+                <small class="mensagem-erro" id="erro-nome"></small>
+            </div>
+
+
+            <div class="campo">
+                <label for="codigo">
+                    Código do produto
+                </label>
+
+                <input
+                    type="text"
+                    id="codigo"
+                    name="codigo"
+                    placeholder="Ex.: TEC-001"
+                    required
+                >
+
+                <small class="mensagem-erro" id="erro-codigo"></small>
+            </div>
+
+
+            <div class="campo">
+                <label for="categoria">
+                    Categoria
+                </label>
+
+                <select
+                    id="categoria"
+                    name="categoria"
+                    required
+                >
+                    <option value="">
+                        Selecione uma categoria
+                    </option>
+
+                    <option value="informatica">
+                        Informática
+                    </option>
+
+                    <option value="perifericos">
+                        Periféricos
+                    </option>
+
+                    <option value="componentes">
+                        Componentes
+                    </option>
+
+                    <option value="acessorios">
+                        Acessórios
+                    </option>
+                </select>
+
+                <small class="mensagem-erro" id="erro-categoria"></small>
+            </div>
+
+
+            <div class="campo">
+                <label for="quantidade">
+                    Quantidade
+                </label>
+
+                <input
+                    type="number"
+                    id="quantidade"
+                    name="quantidade"
+                    min="0"
+                    placeholder="0"
+                    required
+                >
+
+                <small class="mensagem-erro" id="erro-quantidade"></small>
+            </div>
+
+
+            <div class="campo">
+                <label for="preco">
+                    Preço unitário
+                </label>
+
+                <input
+                    type="number"
+                    id="preco"
+                    name="preco"
+                    min="0"
+                    step="0.01"
+                    placeholder="0,00"
+                    required
+                >
+
+                <small class="mensagem-erro" id="erro-preco"></small>
+            </div>
+
+
+            <div class="campo">
+                <label for="fornecedor">
+                    Fornecedor
+                </label>
+
+                <input
+                    type="text"
+                    id="fornecedor"
+                    name="fornecedor"
+                    placeholder="Nome do fornecedor"
+                >
+            </div>
+
+
+            <div class="campo">
+                <label for="cep">
+                    CEP
+                </label>
+
+                <input
+                    type="text"
+                    id="cep"
+                    name="cep"
+                    placeholder="00000-000"
+                    maxlength="9"
+                    inputmode="numeric"
+                    required
+                >
+
+                <small class="mensagem-erro" id="erro-cep"></small>
+            </div>
+
+
+            <div class="campo">
+                <label for="logradouro">
+                    Logradouro
+                </label>
+
+                <input
+                    type="text"
+                    id="logradouro"
+                    name="logradouro"
+                    placeholder="Rua, Avenida..."
+                    readonly
+                >
+            </div>
+
+
+            <div class="campo">
+                <label for="bairro">
+                    Bairro
+                </label>
+
+                <input
+                    type="text"
+                    id="bairro"
+                    name="bairro"
+                    readonly
+                >
+            </div>
+
+
+            <div class="campo">
+                <label for="cidade">
+                    Cidade
+                </label>
+
+                <input
+                    type="text"
+                    id="cidade"
+                    name="cidade"
+                    readonly
+                >
+            </div>
+
+
+            <div class="campo">
+                <label for="estado">
+                    Estado
+                </label>
+
+                <input
+                    type="text"
+                    id="estado"
+                    name="estado"
+                    readonly
+                >
+            </div>
+
+
+            <div class="campo campo-largo">
+                <label for="descricao">
+                    Descrição
+                </label>
+
+                <textarea
+                    id="descricao"
+                    name="descricao"
+                    rows="4"
+                    placeholder="Digite uma breve descrição do produto..."
+                ></textarea>
+            </div>
+
+        </div>
+    </fieldset>
+
+
+    <div
+        class="mensagem-formulario"
+        id="mensagem-formulario"
+        role="alert"
+        aria-live="polite"
+    ></div>
+
+
+    <div class="acoes-formulario">
+
+        <button
+            type="reset"
+            class="botao botao-secundario"
+        >
+            Limpar
+        </button>
+
+        <button
+            type="submit"
+            class="botao botao-principal"
+        >
+            Cadastrar produto
+        </button>
+
+    </div>
+
+</form>
+
+            </div>
+        </section>
+
+
+        <section id="produtos" class="secao secao-tabela" aria-labelledby="titulo-produtos">
+
+            <div class="container">
+
+                <div class="titulo-secao">
+                    <p class="etiqueta">ESTOQUE ATUAL</p>
+
+                    <h2 id="titulo-produtos">
+                        Produtos cadastrados
+                    </h2>
+
+                    <p>
+                        Visualização dos produtos disponíveis no sistema.
+                    </p>
+                </div>
+
+
+                <div class="tabela-container">
+
+                    <table>
+
+                        <caption>
+                            Lista de produtos cadastrados no estoque
+                        </caption>
+
+                        <thead>
+                            <tr>
+                                <th scope="col">Código</th>
+                                <th scope="col">Produto</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Quantidade</th>
+                                <th scope="col">Preço</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Ações</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tabela-produtos">
+
+                            <tr>
+                                <td>TEC-001</td>
+                                <td>Teclado Mecânico</td>
+                                <td>Periféricos</td>
+                                <td>24</td>
+                                <td>R$ 189,90</td>
+                                <td>
+                                    <span class="status disponivel">
+                                        Disponível
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>MOU-002</td>
+                                <td>Mouse sem fio</td>
+                                <td>Periféricos</td>
+                                <td>15</td>
+                                <td>R$ 79,90</td>
+                                <td>
+                                    <span class="status disponivel">
+                                        Disponível
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>SSD-003</td>
+                                <td>SSD 1TB</td>
+                                <td>Componentes</td>
+                                <td>5</td>
+                                <td>R$ 399,90</td>
+                                <td>
+                                    <span class="status baixo">
+                                        Estoque baixo
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>MON-004</td>
+                                <td>Monitor 24"</td>
+                                <td>Informática</td>
+                                <td>0</td>
+                                <td>R$ 899,90</td>
+                                <td>
+                                    <span class="status esgotado">
+                                        Esgotado
+                                    </span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="informacoes" class="secao" aria-labelledby="titulo-informacoes">
+
+            <div class="container">
+
+                <div class="cards">
+
+                    <article class="card">
+                        <span class="card-icone">01</span>
+
+                        <h3>Cadastro</h3>
+
+                        <p>
+                            Registre novos produtos informando seus
+                            principais dados.
+                        </p>
+                    </article>
+
+
+                    <article class="card">
+                        <span class="card-icone">02</span>
+
+                        <h3>Organização</h3>
+
+                        <p>
+                            Mantenha as informações dos produtos
+                            organizadas por categoria.
+                        </p>
+                    </article>
+
+
+                    <article class="card">
+                        <span class="card-icone">03</span>
+
+                        <h3>Controle</h3>
+
+                        <p>
+                            Visualize rapidamente a quantidade e o
+                            status de cada item.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="rodape">
+        <div class="container">
+
+            <p>
+                &copy; 2026 Stock Manager — Interface desenvolvida
+                com HTML5 e CSS3.
+            </p>
+
+            <p>
+                Projeto acadêmico.
+            </p>
+
+        </div>
+    </footer>
+    <script src="JavaScrpt.js"></script>
+
+</body>
+</html>
