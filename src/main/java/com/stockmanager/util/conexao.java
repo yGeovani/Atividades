@@ -10,7 +10,7 @@ public class conexao {
 
     private static final String USUARIO = "root";
 
-    private static final String SENHA = "DB_PASSWORD";
+    private static final String SENHA = "geo7754]~ç";
 
     public static Connection conectar() throws SQLException {
         try {
